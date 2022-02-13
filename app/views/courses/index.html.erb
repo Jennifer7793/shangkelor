@@ -1,12 +1,37 @@
 <h1>課程列表</h1>
 <%= link_to '新增課程', new_course_path %>
-
-  <%= @courses.each do |c| %>
-  <%= c.title %>
-  <%= c.price %>
-  <%= c.currency %>
-  <%= c.category %>
-  <%= c.shelf %>
-  <%= c.description %>
-  <%= c.validate %>
+<table>
+  <thead>
+    <th>
+      <td>名稱</td>
+      <td>價格</td>
+      <td>幣別</td>
+      <td>類別</td>
+      <td>上架與否</td>
+      <td>課程描述</td>
+      <td>有效期</td>
+      <td>詳細課程</td>
+    </th>
+  </thead>
+  <tbody>
+    <th><%= @courses.each do |c| %>
+      <td><%= c.title %></td>
+      <td><%= c.price %></td>
+      <td><%= c.currency %></td>
+      <td><%= c.category %></td>
+      <td><%= c.shelf %></td>
+      <td><%= c.description %></td>
+      <td><%= c.validate %></td>
+      <td><%= link_to '課程內容', course_path %></td>
+      <td><%= link_to '編輯', course_path %></td>
+      <td><%= link_to '刪除', course_path %></td>
+    </th>
+  </tbody>
+</table>
   <% end %>
+  
+ 
+  
+  
+  
+ 

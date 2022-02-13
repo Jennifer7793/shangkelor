@@ -1,4 +1,5 @@
 <h1>新增課程</h1>
+<%= link_to '回到課程列表', courses_path %>
 <%= form_with(model: @course) do |f| %>
   <div class="fields">
     <%= f.label :title %>

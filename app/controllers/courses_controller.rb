@@ -4,10 +4,16 @@ class CoursesController < ApplicationController
   end
   
   def new
-    @course = Course.new(course_params)
+    @course = Course.new
   end
   
   def create
+    @course = Course.new(course_params)
+    if @course.save
+      redirect_to courses_path, notice: "課程新增成功"
+    else
+      render :new
+    end
   end
   
   def edit
@@ -21,6 +27,6 @@ class CoursesController < ApplicationController
   
   private
   def course_params
-    params.permit(:title, :price, :currency, :category, :shelf, :description, :validate)
+    params.require(:course).permit(:title, :price, :currency, :category, :shelf, :description, :validate)
   end
 end
