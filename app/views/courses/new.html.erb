@@ -1,0 +1,32 @@
+<h1>新增課程</h1>
+<%= form_with(model: @course) do |f| %>
+  <div class="fields">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="fields">
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+  <div class="fields">
+    <%= f.label :currency %>
+    <%= f.text_field :currency %>
+  </div>
+  <div class="fields">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+  <div class="fields">
+    <%= f.label :shelf %>
+    <%= f.text_field :shelf %>
+  </div>
+  <div class="fields">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="fields">
+    <%= f.label :validation_date %>
+    <%= f.text_field :validation_date %>
+  </div>
+  <%= f.submit %>
+<% end %>
