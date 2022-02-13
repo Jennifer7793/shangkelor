@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
-
+# Authentication
+gem 'devise', '~> 4.8'
+# For rapid API
+gem 'grape', '~> 1.6.2'
+gem 'grape-entity', '~> 0.10.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use pg as the database for Active Record
@@ -31,6 +35,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'foreman', '~> 0.87.2'
 end
 
 group :development do
